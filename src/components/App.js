@@ -22,8 +22,6 @@ class App extends Component {
       if(typeof accounts[0]!=='undefined'){
         const balance = await web3.eth.getBalance(accounts[0]);
         this.setState({ account: accounts[0], balance: balance, web3: web3 })
-
-        console.log(balance);
       }
       else {
         window.alert('Please login to MetaMask.')
@@ -45,25 +43,27 @@ class App extends Component {
       window.alert('This is a blockchain website. Please install the MetaMask browser extension to continue.')
     }
 
-
-      //assign to values to variables: web3, netId, accounts
-
-      //check if account is detected, then load balance&setStates, elsepush alert
-
-      //in try block load contracts
-
-    //if MetaMask not exists push alert
   }
 
   async deposit(amount) {
-    //check if this.state.dbank is ok
-      //in try block call dBank deposit();
+    if(this.state.dbank!=='undefined'){
+      try {
+        await this.state.dbank.methods.deposit().send({ value: amount.toString(), from: this.state.account })
+      } catch (e) {
+        console.log('Error, deposit: ', e);
+      }
+    }
   }
 
   async withdraw(e) {
-    //prevent button from default click
-    //check if this.state.dbank is ok
-    //in try block call dBank withdraw();
+    e.preventDefault();
+    if(this.state.dbank!=='undefined'){
+      try {
+        await this.state.dbank.methods.withdraw().send({ from: this.state.account })
+      } catch (e) {
+        console.log('Error, withdraw: ', e);
+      }
+    }
   }
 
   constructor(props) {
@@ -90,8 +90,45 @@ class App extends Component {
             <main role="main" className="col-lg-12 d-flex text-center">
               <div className="content mr-auto ml-auto">
               <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-                {/*add Tab deposit*/}
-                {/*add Tab withdraw*/}
+                <Tab eventKey="deposit" title="Deposit">
+                  <div>
+                    <br/>
+                    How much do you want to deposit?
+                    <br/>
+                    (min. amount is 0.01 ETH)
+                    <br/>
+                    (1 despoit is possible at a time)
+                    <br/>
+                    <form onSubmit={(e) => {
+                      e.preventDefault();
+                      let amount = this.depositAmount.value;
+                      amount = amount * 10**18; //convert to Wei
+                      this.deposit(amount);
+                    }}>
+                      <div className='form-group mr-sm-2'>
+                        <br/>
+                          <input id="depositAmount"
+                                 step="0.01"
+                                 className="form-control form-control-md"
+                                 placeholder="amount..."
+                                 type="number"
+                                 ref={(input) => { this.depositAmount = input }}/>
+                      </div>
+                      <button type="submit" className="btn btn-primary">DEPOSIT</button>
+                    </form>
+                  </div>
+                </Tab>
+                <Tab eventKey="withdraw" title="Withdraw">
+                  <div>
+                    <br/>
+                    Do you want to withdraw + take interest?
+                    <br/>
+                    <br/>
+                    <div>
+                      <button type="submit" className="btn btn-primary" onClick={(e) => this.withdraw(e)}>WITHDRAW</button>
+                    </div>
+                  </div>
+                </Tab>
               </Tabs>
               </div>
             </main>
