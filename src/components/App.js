@@ -86,6 +86,10 @@ class App extends Component {
           <h1>Welcome to Trev's DeFi Bank</h1>
           <h3>Account: {this.state.account}</h3>
           <br></br>
+          <h6>
+            This application is on the Rinkeby test network. To use this application: click "Deposit" and enter the amount of ETH you'd like to deposit into this bank. Then click "Withdraw" to withdraw your ETH from this bank + interest given to you in Trev Bank Currency (TBC). Make sure to have a Rinkeby account connected to MetaMask in order to use this application.
+          </h6>
+          <br></br>
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
               <div className="content mr-auto ml-auto">

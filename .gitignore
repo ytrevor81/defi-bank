@@ -50,6 +50,7 @@ typings/
 
 # Optional npm cache directory
 .npm
+config.json
 
 # Optional eslint cache
 .eslintcache
