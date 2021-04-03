@@ -2,3 +2,17 @@ h6 {
   margin-right: 5.0rem;
   margin-left: 5.0rem;
 }
+
+.body {
+  background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url(../images/busystreet.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #FFFFFF !important;
+  height: 100vh;
+}
+
+.main {
+  padding-top: 25px;
+}

@@ -80,16 +80,20 @@ class App extends Component {
 
   render() {
     return (
-      <div className='text-monospace'>
-        <div className="container-fluid mt-5 text-center">
+      <div className='body text-monospace'>
+        <div className="main container text-center">
         <br></br>
           <h1>Welcome to Trev's DeFi Bank</h1>
           <h3>Account: {this.state.account}</h3>
           <br></br>
           <h6>
-            This application is on the Rinkeby test network. To use this application: click "Deposit" and enter the amount of ETH you'd like to deposit into this bank. Then click "Withdraw" to withdraw your ETH from this bank + interest given to you in Trev Bank Currency (TBC). Make sure to have a Rinkeby account connected to MetaMask in order to use this application.
+            This application is on the Rinkeby test network. To use this application: click "Deposit" and enter the amount of ETH you'd like to deposit into this bank. Then click "Withdraw" to withdraw your ETH from this bank + interest given to you in Trev Bank Currency (TBC).
           </h6>
-          <br></br>
+          <br/>
+          <h6>
+          Make sure to have a Rinkeby account connected to MetaMask in order to use this application. When you deposit and withdraw ETH, the transitions will take a few seconds to process on the blockchain.
+          </h6>
+          <br/>
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
               <div className="content mr-auto ml-auto">
