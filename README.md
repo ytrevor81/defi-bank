@@ -3,7 +3,7 @@ A decentralized bank on Rinkeby, where you can deposit ETH and withdraw your ETH
 
 The "interest" users collect once they withdraw their ETH is an ERC-20 token named Trev Bank Currency (TBC).
 
-If you have a Rinkeby account connected to your MetaMask wallet, check out my DeFi app here: https://ytrevor83.github.io/defi-bank-live/
+If you have a Rinkeby account connected to your MetaMask wallet, check out my DeFi app here: https://ytrevor84.github.io/decentralized-bank-live/
 
 ## Technologies
 Solidity (Smart Contracts)  |  React  |  Javascript  |  Web3.js  |  Truffle  |  ERC-20  |  Ganache  |  Infura API
