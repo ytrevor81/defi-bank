@@ -8,5 +8,6 @@ If you have a Rinkeby account connected to your MetaMask wallet, check out my De
 ## Technologies
 Solidity (Smart Contracts)  |  React  |  Javascript  |  Web3.js  |  Truffle  |  ERC-20  |  Ganache  |  Infura API
 
+![bank1](https://user-images.githubusercontent.com/46886041/113496714-966db480-9526-11eb-986c-c421f06d8cd1.JPG)
 
-![defibank](https://user-images.githubusercontent.com/46886041/112651349-e2fa2580-8e7e-11eb-87df-9bb2f4d4c0f7.JPG)
+![bank2](https://user-images.githubusercontent.com/46886041/113496715-9a99d200-9526-11eb-8f76-c82259ac4437.JPG)
