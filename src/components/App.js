@@ -5,7 +5,6 @@ import Token from '../abis/Token.json'
 import Web3 from 'web3';
 import './App.css';
 
-//h0m3w0rk - add new tab to check accrued interest
 
 class App extends Component {
 
